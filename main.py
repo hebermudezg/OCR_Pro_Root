@@ -15,7 +15,7 @@ def perform_ocr():
     pdf_path = pdf_path_label.cget("text")
     output_path = ocr.convert_pdf_to_text(pdf_path)
     output_label.config(text=f"Texto extraído y guardado en {output_path}")
-    messagebox.showinfo("ISVIMED OCR Pro", "El escaneo OCR está listo.")
+    messagebox.showinfo("OCR Pro", "El escaneo OCR está listo.")
     open_result_button.config(state=tk.NORMAL)  # Habilitar el botón para abrir el resultado
 
 def open_result():
