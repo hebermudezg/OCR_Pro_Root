@@ -26,7 +26,7 @@ def open_policies():
     webbrowser.open("https://ruta/a/politicas_de_uso.pdf")  # Enlace a las políticas de uso
 
 root = tk.Tk()
-root.title("ISVIMED OCR Pro")
+root.title("OCR Pro")
 
 # Icono de la Aplicación
 root.iconbitmap('icono.ico')  # Ajusta la ruta según sea necesario
