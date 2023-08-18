@@ -3,6 +3,9 @@ from tkinter import filedialog, messagebox
 import webbrowser
 import os
 import ocr
+import sys
+import subprocess
+
 
 output_path = ""  # Variable global para guardar la ruta del archivo de salida
 
@@ -19,8 +22,13 @@ def perform_ocr():
     open_result_button.config(state=tk.NORMAL)  # Habilitar el botón para abrir el resultado
 
 def open_result():
-    global output_path
-    os.system(f'open "{output_path}"')  # Agregar comillas alrededor de la ruta del archivo
+    global output_path     
+    if sys.platform.startswith('darwin'):        
+         subprocess.run(['open', output_path])     
+    elif sys.platform.startswith('linux'):         
+         subprocess.run(['xdg-open', output_path])    
+    elif sys.platform.startswith('win32'):        
+         subprocess.run(['start', output_path], shell=True)
 
 def open_policies():
     webbrowser.open("https://ruta/a/politicas_de_uso.pdf")  # Enlace a las políticas de uso
